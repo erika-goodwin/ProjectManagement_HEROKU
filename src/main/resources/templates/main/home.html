@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head th:replace="layouts :: head">
+  	<script src="">
+  	</script>
+  </head>
+  <body>
+  
+  <nav th:replace="layouts :: navbar"></nav>
+
+	<div class="container">
+	
+		<div class="jumbotron">
+			
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Hello!</h1>
+					<p class="lead">Welcome to Project IO v.<span th:text="${versionNumber}"></span></p>
+					<hr class="my-4" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Current Employees</h3>
+					<table class="table table-bordered table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Project Count</th>
+							</tr>
+						</thead>
+					
+						<tbody>
+							<tr th:each="field: ${employeeList}">
+								<td th:text="${field.firstName}"></td>
+								<td th:text="${field.lastName}"></td>
+								<td th:text="${field.projectCount}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="col-md-6">
+				 	<canvas id="myChart"></canvas>
+				 	<script>
+				 		var chartData = "[[${projectStatusCount}]]"
+				 	</script>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script text="text/javascript" th:src="@{/js/script.js}"></script>
+  </body>
+</html>
