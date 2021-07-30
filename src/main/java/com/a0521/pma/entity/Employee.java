@@ -19,9 +19,9 @@ public class Employee {
 
 	//==============THIS IS ID================================================
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //700
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = "project_seq")
 	private long employeeId;
 	//==============THIS IS ID================================================
